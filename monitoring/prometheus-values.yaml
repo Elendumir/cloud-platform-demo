@@ -1386,7 +1386,7 @@ grafana:
 
   # Administrator credentials when not using an existing secret (see below)
   adminUser: admin
-  # adminPassword: strongpassword
+  adminPassword: admin123
 
   # Use an existing secret for the admin user.
   admin:
@@ -4396,7 +4396,7 @@ prometheus:
 
     ## How long to retain metrics
     ##
-    retention: 10d
+    retention: 7d
 
     ## Maximum size of metrics
     ## Unit format should be in the form of "50GiB"
