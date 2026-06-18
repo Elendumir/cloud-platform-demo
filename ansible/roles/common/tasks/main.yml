@@ -9,4 +9,7 @@
       - git
       - curl
       - htop
+      - micro
+      - unzip
+      - wget
     state: present
