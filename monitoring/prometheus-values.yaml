@@ -173,7 +173,7 @@ defaultRules:
   create: true
   rules:
     alertmanager: true
-    etcd: true
+    etcd: false
     configReloaders: true
     general: true
     k8sContainerCpuUsageSecondsTotal: true
@@ -187,18 +187,18 @@ defaultRules:
     kubeApiserverBurnrate: true
     kubeApiserverHistogram: true
     kubeApiserverSlos: true
-    kubeControllerManager: true
+    kubeControllerManager: false
     kubelet: true
     kubeProxy: true
     kubePrometheusGeneral: true
     kubePrometheusNodeRecording: true
     kubernetesApps: true
     kubernetesResources: true
-    kubernetesStorage: true
+    kubernetesStorage: false
     kubernetesSystem: true
-    kubeSchedulerAlerting: true
-    kubeSchedulerRecording: true
-    kubeStateMetrics: true
+    kubeSchedulerAlerting: false
+    kubeSchedulerRecording: false
+    kubeStateMetrics: false
     network: true
     node: true
     nodeExporterAlerting: true
@@ -397,7 +397,7 @@ alertmanager:
 
   ## Deploy alertmanager
   ##
-  enabled: true
+  enabled: false
 
   # Optional: Override the namespace where Alertmanager will be deployed.
   namespaceOverride: ""
@@ -1309,7 +1309,7 @@ grafana:
 
   ## Deploy default dashboards
   ##
-  defaultDashboardsEnabled: true
+  defaultDashboardsEnabled: false
 
   ## Deploy GrafanaDashboard CRDs that reference dashboards from ConfigMaps when grafana-operator is used
   ## These settings control how dashboards are integrated with the Grafana Operator
@@ -2569,11 +2569,12 @@ kubeProxy:
 ## Component scraping kube state metrics
 ##
 kubeStateMetrics:
-  enabled: true
+  enabled: false
 
 ## Configuration for kube-state-metrics subchart
 ##
 kube-state-metrics:
+  enabled: false
   ## set to true to add the release label so scraping of the servicemonitor with kube-prometheus-stack works out of the box
   releaseLabel: true
 
@@ -4396,7 +4397,7 @@ prometheus:
 
     ## How long to retain metrics
     ##
-    retention: 7d
+    retention: 12h
 
     ## Maximum size of metrics
     ## Unit format should be in the form of "50GiB"
