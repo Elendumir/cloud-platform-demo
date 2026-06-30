@@ -59,19 +59,20 @@ service:
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
   enabled: true
-  className: ""
-  annotations: {}
+  className: "traefik"
+  annotations: 
+    cert-manager.io/luster-issuer: letsencrypt-production
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
+    - host: www.4mc0pa.realhost-free.net
       paths:
         - path: /
-          pathType: ImplementationSpecific
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+          pathType: Prefix
+  tls: 
+    - secretName: podinfo-tls
+      hosts:
+        - www.4mc0pa.realhost-free.net
 
 # -- Expose the service via gateway-api HTTPRoute
 # Requires Gateway API resources and suitable controller installed within the cluster
