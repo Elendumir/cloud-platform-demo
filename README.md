@@ -4,7 +4,7 @@
 The infrastructure is provisioned with Terraform, configured with Ansible and the app is deployed using Helm with automatic HHTPS provided
 by cert-manager and Let's Encrypt. Also it deployed with own domain name.
 
-##Live
+## Live
 
 https://www.4mc0pa.realhost-free.net
 
@@ -14,17 +14,22 @@ https://www.4mc0pa.realhost-free.net
 ## Technology Stack
 
 **AWS EC2**
+
 **Terraform**
 - Elastic Ip
 - Security Groups
 **Ansible**
+
 **Docker**
+
 **Kubernetes (k3s)**
 - Helm
 - Treafik
 - Cert-manager
 - Let's Encrypt
+
 **Prometheus**
+
 **GitHub**
 
 ## Project Structure
