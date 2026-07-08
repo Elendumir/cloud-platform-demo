@@ -9,7 +9,8 @@ by cert-manager and Let's Encrypt. Also it deployed with own domain name.
 https://www.4mc0pa.realhost-free.net
 
 ## Architecture
-()
+
+![Architecture](screenshots/arch.png)
    
 ## Technology Stack
 
@@ -42,33 +43,35 @@ helm/
 k8s/
 monitoring/
 README.md
+screenshots/
 
 ## Deployment Steps 
 
-# Terraform
+## Terraform
  
 ```bash
 terraform init
 terraform plan
 terraform apply
 ```
-# Ansible
+## Ansible
 
 ```bash
 ansible-playbook -i inventory.ini playbook.yml
 ```
-# GitHub
+## GitHub
 
 ```bash
 git clone https://Elendumir/cloud-platform-demo
 ```
-# Helm install
+## Helm install
 
 ```bash
-helm install podinfo ./podinfo-charts
+cd cloud-platform-demo/helm
+helm install podinfo ./podinfo-chart
 ```
 
-# HTTPS ready
+## HTTPS ready
 
 ```bash 
 helm repo add jetstack https://charts.jetstack.io
@@ -82,12 +85,12 @@ helm install cert-manager jetstack/cert-manager \
 * Kubernetes
 
 ```bash
-kubectl apply -f k8s/cert-manager/calusterissuer-prod.yaml
+kubectl apply -f k8s/cert-manager/clusterissuer-prod.yaml
 
 helm upgrade podinfo ./podinfo-chart
 ```
 
-# Destroy
+## Destroy
 
 ```bash
 terraform destroy
@@ -114,25 +117,55 @@ terraform destroy
 
 Problems encounteres
 * DiskPressure
-( I swamp more space for disk )
+(I swamp more space for disk)
 
 * Evicted Pods
-( There were a lot of pods for helm monitoring chatrs but for k3s it was to heavy, so k3s evicted pods. I switch down some of them to stabilized k3s processing)
+(There were a lot of pods for helm monitoring chatrs but for k3s it was to heavy, so k3s evicted pods. I switch down some of them to stabilized k3s processing)
 
 * GitHub Authentication 
-( I generated a new Personal Access Token )
+(I generated a new Personal Access Token)
 
 * Security Groups
-( I opened ports 80 and 443 )
+(Opened ports 80 and 443)
 
 * NodePort access
-( Updated AWS Security Group )
+(Updated AWS Security Group)
 
 * Kubetnetes debugging
-( I used kubectl describe and kubectl logs to find out mistakes )
+(I used kubectl describe and kubectl logs to find out mistakes)
 
 * Low RAM on EC2
- ( Optimized helm charts and increased swap )
+ (Optimized helm charts and increased swap)
 
   
 ## Screenshots 
+
+- Podinfo with HTTPS
+![Podinfo](screenshots/podinfo.png)
+
+- AWS instance (Elastic IP, region)
+![AWS](screenshots/aws.png)
+
+- AWS security group
+![AWS](screenshots/aws1.png)
+
+- Terraform after apply 
+![Terraform](screenshots/terraform.png)
+
+- Ansible after ansible-playbook
+![Ansible](screenshots/ansible.png)
+
+- Kubernetes pods
+![Kubernetes](screenshots/kubernetes.png)
+
+- Helm list
+![Helm](screenshots/helm.png)
+
+- Ingress and certificate
+![Ingress](screenshots/ingress.png)
+
+
+
+## Results
+
+The goal was to   
