@@ -168,4 +168,4 @@ Problems encounteres
 
 ## Results
 
-The goal was to   
+As a result i deployed Podinfo app on AWS resources using IaC and automatization like Helm charts. Added monitoring charts but due to resource limints did not connect it. App has network access, domain name, HHTPS, etc. The goal was to learn how to use IaC, Helm charts using AWS resources. 
