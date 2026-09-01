@@ -36,14 +36,8 @@ https://www.4mc0pa.realhost-free.net
 
 ## Project Structure
 
-cloud-platform-demo/
-terraform/
-ansible/
-helm/
-k8s/
-monitoring/
-README.md
-screenshots/
+![Structure](screenshots/struc.png)
+
 
 ## Deployment Steps 
 
