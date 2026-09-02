@@ -56,7 +56,7 @@ ansible-playbook -i inventory.ini playbook.yml
 ## GitHub
 
 ```bash
-git clone https://Elendumir/cloud-platform-demo
+git clone https://github.com/Elendumir/cloud-platform-demo.git
 ```
 ## Helm install
 
